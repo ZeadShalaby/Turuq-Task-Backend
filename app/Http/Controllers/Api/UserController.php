@@ -35,7 +35,7 @@ class UserController extends BaseController
                 'per_page' => $users->perPage(),
                 'total' => $users->total(),
             ],
-        ],__('messages.retrieved_successfully'));
+        ], __('messages.retrieved_successfully'));
     }
 
     /**

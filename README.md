@@ -106,6 +106,10 @@ tests/
 └── Unit/
 
 delivery-slot-allocation.md   # Task 2 — pseudocode & design write-up
+
+postman/
+├── Backend-Assessment.postman_collection.json
+└── Backend-Assessment.postman_environment.json
 ```
 
 This separation keeps controllers thin, business logic testable, and data access swappable — a Service can be reused across multiple controllers, and Repositories abstract away the underlying MongoDB queries.
@@ -190,6 +194,35 @@ It includes:
 - Required/optional request parameters and validation rules.
 - Example requests and responses.
 - Authentication requirements per endpoint.
+
+---
+
+## 📮 Postman Collection
+
+A ready-to-use Postman collection and environment are included in the repository so reviewers can test every endpoint without manual setup.
+
+```
+postman/
+├── Backend-Assessment.postman_collection.json
+└── Backend-Assessment.postman_environment.json
+```
+
+**How to use:**
+
+1. Open Postman → **Import** → select both files from the `postman/` folder (or drag-and-drop them).
+2. In the top-right environment selector, choose **Backend Assessment** (or whatever name you gave the environment).
+3. Update the environment variable `base_url` if you're not running on `http://127.0.0.1:8000`.
+4. Run **Register** or **Login** first — the collection is set up to automatically save the returned `access_token` (and `refresh_token`) into the environment variables, so every protected request afterward is authenticated automatically.
+
+**Environment variables included:**
+
+| Variable | Description |
+| :--- | :--- |
+| `base_url` | Base API URL (default: `http://127.0.0.1:8000/api`) |
+| `access_token` | Auto-filled after login/register |
+| `refresh_token` | Auto-filled after login, used by `/api/refresh` |
+
+> ⚠️ Note: the environment file does **not** contain real secrets — only placeholder/local values — so it's safe to commit to a public repository.
 
 ---
 

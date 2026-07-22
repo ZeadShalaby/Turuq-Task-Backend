@@ -335,7 +335,7 @@ php artisan test
 
 ---
 
-Task 2
+## 🧪 Task 2
 
 The detailed pseudocode for the delivery slot allocation system is available in:
 

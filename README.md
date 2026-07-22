@@ -105,7 +105,8 @@ tests/
 ├── Feature/
 └── Unit/
 
-delivery-slot-allocation.md   # Task 2 — pseudocode & design write-up
+- README.md
+- DELIVERY_SLOT_PSEUDOCODE.md (Task 2 Solution)
 
 postman/
 ├── Backend-Assessment.postman_collection.json
@@ -333,6 +334,12 @@ php artisan test
 ```
 
 ---
+
+Task 2
+
+The detailed pseudocode for the delivery slot allocation system is available in:
+
+DELIVERY_SLOT_PSEUDOCODE.md
 
 ## 🤝 Contributing
 
